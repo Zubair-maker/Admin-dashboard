@@ -1,0 +1,65 @@
+@import "mixin";
+
+:root {
+  font-family: sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+.red {
+  color: #ec3636;
+}
+.purple {
+  color: #f53ff5;
+}
+.green {
+  color: #34ce34;
+}
+
+.admin_container {
+  @include grid(1fr 4fr, 2rem);
+  background-color: azure;
+  height: 100vh;
+
+  > aside {
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    z-index: 10;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .main_admin_wrapper {
+      margin: 2rem 1rem;
+      > h5 {
+        @include heading(2px);
+        opacity: 0.8;
+        margin: 1rem 0;
+      }
+      > ul {
+        @include flex(column, unset, unset, 0.5rem);
+        list-style: none;
+        > li {
+          padding: 0.5rem 0.6rem;
+          border-radius: 10px;
+          a {
+            color: rgba(0, 0, 0, 0.2);
+            @include flex(row, unset);
+            gap: 6px;
+          }
+        }
+      }
+    }
+  }
+}
