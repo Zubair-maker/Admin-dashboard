@@ -4,7 +4,7 @@ const Customers = () => {
   return (
     <div className="admin_container">
       <AdminSidebar />
-      <main>hello</main>
+      <main>Customers</main>
     </div>
   )
 }

@@ -4,7 +4,7 @@ const Product = () => {
   return (
     <div className="admin_container">
     <AdminSidebar />
-    <main>hello</main>
+    <main>Product</main>
   </div>
   )
 }

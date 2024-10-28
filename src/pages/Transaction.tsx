@@ -4,7 +4,7 @@ const Transaction = () => {
   return (
     <div className="admin_container">
       <AdminSidebar />
-      <main>hello</main>
+      <main>Transaction</main>
     </div>
   )
 }
