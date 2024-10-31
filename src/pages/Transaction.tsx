@@ -1,4 +1,4 @@
-import AdminSidebar from "../components/AdminSidebar"
+import AdminSidebar from "../components/AdminSidebar";
 
 const Transaction = () => {
   return (
@@ -6,7 +6,7 @@ const Transaction = () => {
       <AdminSidebar />
       <main>Transaction</main>
     </div>
-  )
-}
+  );
+};
 
-export default Transaction
+export default Transaction;

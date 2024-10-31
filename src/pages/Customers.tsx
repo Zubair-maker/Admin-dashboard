@@ -1,4 +1,4 @@
-import AdminSidebar from "../components/AdminSidebar"
+import AdminSidebar from "../components/AdminSidebar";
 
 const Customers = () => {
   return (
@@ -6,7 +6,7 @@ const Customers = () => {
       <AdminSidebar />
       <main>Customers</main>
     </div>
-  )
-}
+  );
+};
 
-export default Customers
+export default Customers;
