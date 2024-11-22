@@ -1,17 +1,19 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, useCallback, useState } from "react";
 import AdminSidebar from "../components/AdminSidebar";
-import TableHOC from "../components/TableHOC";
 import { Column } from "react-table";
+import { Link } from "react-router-dom";
+import TableHOC from "../components/TableHOC";
+import { FaPlus } from "react-icons/fa";
 
-interface DataTypes {
-  photo: string;
+interface DataType {
+  photo: ReactElement;
   name: string;
   price: number;
   stock: number;
   action: ReactElement;
 }
 
-const columns: Column<DataTypes>[] = [
+const columns: Column<DataType>[] = [
   {
     Header: "Photo",
     accessor: "photo",
@@ -33,21 +35,88 @@ const columns: Column<DataTypes>[] = [
     accessor: "action",
   },
 ];
+const img =
+  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8&w=1000&q=804";
 
-const arr: DataTypes[] = [];
+const img2 = "https://m.media-amazon.com/images/I/514T0SvwkHL._SL1500_.jpg";
+
+const arr: DataType[] = [
+  {
+    photo: <img src={img} alt="Shoes" width="100"/>,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  }
+];
+ 
 
 const Product = () => {
-  const [data] = useState<DataTypes[]>(arr);
-  const Table = TableHOC<DataTypes>(
-    columns,
-    data,
-    "dashboard-product-box",
-    "Product"
-  );
+  const [data] = useState<DataType[]>(arr);
+
+  const Table = useCallback(
+    TableHOC<DataType>(columns, data, "dashboard-product-box", "Products",true),[]
+  )
   return (
     <div className="admin_container">
       <AdminSidebar />
       <main>{Table()}</main>
+       <Link to="/admin/product/new" className="plus-btn">
+         <FaPlus/>
+       </Link>
     </div>
   );
 };

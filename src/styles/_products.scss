@@ -1,0 +1,19 @@
+.dashboard-product-box {
+  background-color: white;
+  padding: 2rem;
+  overflow: auto;
+  @include square(100%);
+}
+.plus-btn {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  color: white;
+  @include square(2rem);
+  border-radius: 50%;
+  background-color: rgb(201, 9, 9);
+  &:hover {
+    opacity: 0.8;
+  }
+  @include flex(row, center, center, 0)
+}

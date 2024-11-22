@@ -8,6 +8,8 @@ interface DataType {
   amount: number;
   status: string;
 }
+// Header – the name of the column
+// Accessor – key in data.
 const columns: Column<DataType>[] = [
   {
     Header: "Id",
@@ -32,7 +34,12 @@ const columns: Column<DataType>[] = [
 ];
 
 const DashboardTable = ({ data = [] }: { data: DataType[] }) => {
-  return TableHOC<DataType>(columns, data, "transsaction_box", "TopTransaction")();
+  return TableHOC<DataType>(
+    columns,
+    data,
+    "transsaction_box",
+    "TopTransaction"
+  )();
 };
 
 export default DashboardTable;
