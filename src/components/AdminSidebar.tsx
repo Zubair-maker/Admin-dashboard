@@ -3,11 +3,9 @@ import {
   FaChartBar,
   FaChartLine,
   FaChartPie,
-  FaStopwatch,
 } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
 import {
-  RiCoupon3Fill,
   RiDashboardFill,
   RiFile2Fill,
   RiShoppingBag3Fill,
@@ -73,25 +71,6 @@ const AdminSidebar = () => {
             url="/admin/chart/line"
             text="Line"
             Icon={FaChartLine}
-            location={location}
-          />
-        </ul>
-      </div>
-
-      <div className="main_admin_wrapper">
-        <h5>Apps</h5>
-        <ul>
-          <Li
-            url="/admin/app/stopwatch"
-            text="Stopwatch"
-            Icon={FaStopwatch}
-            location={location}
-          />
-
-          <Li
-            url="/admin/app/coupon"
-            text="Coupon"
-            Icon={RiCoupon3Fill}
             location={location}
           />
         </ul>
